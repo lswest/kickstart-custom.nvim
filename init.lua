@@ -729,7 +729,9 @@ require('lazy').setup({
     'hrsh7th/nvim-cmp',
     event = 'InsertEnter',
     formatting = {
-      format = require('nvim-highlight-colors').format,
+      format = function(entry, item)
+        return require('nvim-highlight-colors').format
+      end
     },
     dependencies = {
       -- Snippet Engine & its associated nvim-cmp source
